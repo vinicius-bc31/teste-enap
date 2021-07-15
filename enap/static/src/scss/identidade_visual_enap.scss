@@ -1,0 +1,14 @@
+/*
+ *
+ * Mudanças para a identidaded visual da ENAP
+ *
+ */
+
+
+.o_required_modifier {
+    &.o_input, .o_input {
+        //background-color: #D2D2FF!important;
+        background-color: #EFEFF0!important;
+        border-bottom: 2px solid $o-enterprise-primary-color;
+    }
+}

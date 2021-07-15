@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright 2017- Taŭga Tecnologia
+      Ari Caldeira <ari.caldeira@tauga.com.br>
+-->
+<odoo>
+
+    <template
+        id="web_assets_backend"
+        name="web.assets.backend"
+        inherit_id="web.assets_backend">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" href="/enap/static/src/scss/identidade_visual_enap.scss" />
+        </xpath>
+    </template>
+
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright © 2017; Brasil; MTSIS Sistemas; Todos os direitos reservados
+    Copyright © 2017; Brazil; MTSIS Systems; All rights reserved
+
+-->
+<odoo>
+
+    <menuitem
+        sequence="-1000"
+        id="menu_enap_evento"
+        name="Eventos"
+        />
+
+</odoo>

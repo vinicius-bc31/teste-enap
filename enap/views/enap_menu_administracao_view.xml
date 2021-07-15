@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright © 2017; Brasil; MTSIS Sistemas; Todos os direitos reservados
+    Copyright © 2017; Brazil; MTSIS Systems; All rights reserved
+
+-->
+<odoo>
+
+    <menuitem
+        sequence="9999"
+        id="menu_enap_administracao"
+        name="Administração"
+        groups="enap.GRUPO_ENAP_SUPORTE,enap.GRUPO_ENAP_ADMINISTRADOR"
+    />
+
+    <menuitem
+        sequence="1"
+        id="menu_enap_administracao_geral"
+        name="Geral"
+        parent="menu_enap_administracao"
+    />
+
+</odoo>

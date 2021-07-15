@@ -1,0 +1,47 @@
+<!--
+
+    Copyright © 2017; Brasil; Taŭga Tecnologia; Todos os direitos reservados
+    Copyright © 2017; Brazil; Taŭga Technology; All rights reserved
+
+-->
+<odoo noupdate="False">
+
+    <!--
+
+       ENAP - Formatos de eventos
+
+    -->
+
+    <record id="ENAP_FORMATO_WEBINAR" model="enap.formato">
+        <field name="nome">Webinar</field>
+    </record>
+
+    <record id="ENAP_FORMATO_PALESTRA" model="enap.formato">
+        <field name="nome">Palestra</field>
+    </record>
+
+    <record id="ENAP_FORMATO_MESA_REDONDA" model="enap.formato">
+        <field name="nome">Mesa Redonda</field>
+    </record>
+
+    <record id="ENAP_FORMATO_PAINEL" model="enap.formato">
+        <field name="nome">Painel</field>
+    </record>
+
+    <record id="ENAP_FORMATO_DEBATE" model="enap.formato">
+        <field name="nome">Debate</field>
+    </record>
+
+    <record id="ENAP_FORMATO_MEETUP" model="enap.formato">
+        <field name="nome">Meetup</field>
+    </record>
+
+    <record id="ENAP_FORMATO_SEMANA" model="enap.formato">
+        <field name="nome">Semana</field>
+    </record>
+
+    <record id="ENAP_FORMATO_OFICINA_DE_INOVACAO" model="enap.formato">
+        <field name="nome">Oficina de Inovação</field>
+    </record>
+
+ </odoo>

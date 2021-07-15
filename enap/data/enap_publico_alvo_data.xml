@@ -1,0 +1,35 @@
+<!--
+
+    Copyright © 2017; Brasil; Taŭga Tecnologia; Todos os direitos reservados
+    Copyright © 2017; Brazil; Taŭga Technology; All rights reserved
+
+-->
+<odoo noupdate="False">
+
+    <!--
+
+       ENAP - Públicos Alvo
+
+    -->
+
+    <record id="ENAP_PUBLICO_ALVO_ALTOS_EXECUTIVOS" model="enap.publico.alvo">
+        <field name="nome">Altos Executivos</field>
+    </record>
+
+    <record id="ENAP_PUBLICO_ALVO_AGENTES_PUBLICOS_FEDERAIS" model="enap.publico.alvo">
+        <field name="nome">Agentes Públicos Federais</field>
+    </record>
+
+    <record id="ENAP_PUBLICO_ALVO_AGENTES_PUBLICOS_ESTADUAIS" model="enap.publico.alvo">
+        <field name="nome">Agentes Públicos Estaduais</field>
+    </record>
+
+    <record id="ENAP_PUBLICO_ALVO_AGENTES_PUBLICOS_MUNICIPAIS" model="enap.publico.alvo">
+        <field name="nome">Agentes Públicos Municipais</field>
+    </record>
+
+    <record id="ENAP_PUBLICO_ALVO_CIDADAOS" model="enap.publico.alvo">
+        <field name="nome">Cidadãos</field>
+    </record>
+
+ </odoo>

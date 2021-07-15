@@ -1,0 +1,115 @@
+<!--
+
+    Copyright © 2017; Brasil; Taŭga Tecnologia; Todos os direitos reservados
+    Copyright © 2017; Brazil; Taŭga Technology; All rights reserved
+
+-->
+<odoo noupdate="False">
+
+    <!--
+
+       ENAP - Eixos Temáticos
+
+    -->
+
+    <record id="ENAP_EIXO_TEMATICO_APOSENTADORIA_E_PREVIDENCIA" model="enap.eixo.tematico">
+        <field name="nome">Aposentadoria e Previdência</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_ANALISE_E_CIENCIA_DE_DADOS" model="enap.eixo.tematico">
+        <field name="nome">Análise e Ciência de Dados</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_COMUNICACAO" model="enap.eixo.tematico">
+        <field name="nome">Comunicação</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_DESENVOLVIMENTO_PESSOAL" model="enap.eixo.tematico">
+        <field name="nome">Desenvolvimento Pessoal</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_DIREITO_E_LEGISLACAO" model="enap.eixo.tematico">
+        <field name="nome">Direito e Legislação</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_ECONOMIA" model="enap.eixo.tematico">
+        <field name="nome">Economia</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_EDUCACAO_E_DOCENCIA" model="enap.eixo.tematico">
+        <field name="nome">Educação e Docência</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_ESTRATEGIA_E_PLANEJAMENTO" model="enap.eixo.tematico">
+        <field name="nome">Estratégia e Planejamento</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_ETICA_E_CIDADANIA" model="enap.eixo.tematico">
+        <field name="nome">Ética e Cidadania</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_EXCELENCIA_NA_ENTREGA_DE_SERVICOS" model="enap.eixo.tematico">
+        <field name="nome">Excelência na Entrega de Serviços</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_GESTAO_DA_INFORMACAO_E_DO_CONHECIMENTO" model="enap.eixo.tematico">
+        <field name="nome">Gestão da Informação e do Conhecimento</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_POLITICAS_PUBLICAS" model="enap.eixo.tematico">
+        <field name="nome">Políticas Públicas</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_GESTAO_DE_PESSOAS" model="enap.eixo.tematico">
+        <field name="nome">Gestão de Pessoas</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_POLITICAS_SOCIAIS" model="enap.eixo.tematico">
+        <field name="nome">Políticas Sociais</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_GESTAO_PUBLICA" model="enap.eixo.tematico">
+        <field name="nome">Gestão Pública</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_REGULACAO" model="enap.eixo.tematico">
+        <field name="nome">Regulação</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_GOVERNO_E_TRANSFORMACAO_DIGITAL" model="enap.eixo.tematico">
+        <field name="nome">Governo e Transformação Digital</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_TRANSPARENCIA_CONTROLE_E_PARTICIPACAO" model="enap.eixo.tematico">
+        <field name="nome">Transparência, Controle e Participação</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_INSFRAESTRUTURA" model="enap.eixo.tematico">
+        <field name="nome">Infraestrutura</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_USO_DE_EVIDENCIAS" model="enap.eixo.tematico">
+        <field name="nome">Uso de Evidências</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_INOVACAO" model="enap.eixo.tematico">
+        <field name="nome">Inovação</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_LIDERANCA" model="enap.eixo.tematico">
+        <field name="nome">Liderança</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_LOGISTICA_E_COMPRAS_PUBLICAS" model="enap.eixo.tematico">
+        <field name="nome">Logística e Compras Públicas</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_MEIO_AMBIENTE" model="enap.eixo.tematico">
+        <field name="nome">Meio Ambiente</field>
+    </record>
+
+    <record id="ENAP_EIXO_TEMATICO_ORCAMENTO_E_FINANCAS" model="enap.eixo.tematico">
+        <field name="nome">Orçamento e Finanças</field>
+    </record>
+
+ </odoo>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright © 2019–; Brasil; Taŭga Tecnologia; Todos os direitos reservados
+    Copyright © 2019–; Brazil; Taŭga Technology; All rights reserved
+
+-->
+<odoo>
+
+    <record model="ir.ui.view" id="enap_formato_form" >
+        <field name="name">enap.formato.form</field>
+        <field name="model">enap.formato</field>
+        <field name="priority">1</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <form string="Formato" duplicate="false">
+                <div class="o_form_statusbar">
+                    <div class="o_statusbar_buttons">
+<!--                         <button type="object" name="gera_arquivo" string="Gerar arquivo" class="btn-primary" /> -->
+                    </div>
+                </div>
+
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    </div>
+                    <div name="titulo" class="oe_title">
+                        <h1>
+                            <field name="nome" placeholder="Formato" required="1" />
+                        </h1>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="enap_formato_tree" >
+        <field name="name">enap.formato.tree</field>
+        <field name="model">enap.formato</field>
+        <field name="priority">1</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <tree string="Formato" duplicate="false">
+                <field name="nome" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="enap_formato_search" >
+        <field name="name">enap.formato.search</field>
+        <field name="model">enap.formato</field>
+        <field name="priority">1</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <search string="Formato">
+                <field name="nome" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="enap_formato_action">
+        <field name="name">Formato</field>
+        <field name="res_model">enap.formato</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="enap_formato_search" />
+    </record>
+
+    <record model="ir.actions.act_window.view" id="enap_formato_tree_action">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="enap_formato_tree"/>
+        <field name="act_window_id" ref="enap_formato_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="enap_formato_form_action">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="enap_formato_form"/>
+        <field name="act_window_id" ref="enap_formato_action"/>
+    </record>
+
+    <menuitem
+        id="menu_enap_formato"
+        sequence="1"
+        name="Formato"
+        parent="menu_enap_administracao_geral"
+        action="enap_formato_action"
+        />
+
+</odoo>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright © 2019–; Brasil; Taŭga Tecnologia; Todos os direitos reservados
+    Copyright © 2019–; Brazil; Taŭga Technology; All rights reserved
+
+-->
+<odoo>
+
+    <record model="ir.ui.view" id="enap_evento_convidado_form" >
+        <field name="name">enap.evento.convidado.form</field>
+        <field name="model">enap.evento.convidado</field>
+        <field name="priority">1</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <form string="Convidado de Evento" duplicate="false">
+                <div class="o_form_statusbar">
+                    <div class="o_statusbar_buttons">
+                    </div>
+                </div>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    </div>
+                    <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_512'}"/>
+                    <div name="titulo" class="oe_title">
+                        <h1>
+                            <field name="nome" placeholder="Informe o nome do convidado" required="1" />
+                        </h1>
+                    </div>                      
+                    <group col="2" colspan="4">
+                        <field name="cargo" string="Cargo/especialidade:" placeholder="Informe a especialidade. Exemplo: Especialista em Políticas Públicas"/>
+                        <field name="minibiografia" string="Mini bio:" placeholder="Descreva brevemente a trajetória deste especialista"/>
+                        <field name="url_perfil_profissional" string="Perfil profissional (URL):" widget="url" placeholder="Tem perfil no LinkedIn, Lattes etc? Informe aqui"/>
+                    </group>                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="enap_evento_convidado_tree" >
+        <field name="name">enap.evento.convidado.tree</field>
+        <field name="model">enap.evento.convidado</field>
+        <field name="priority">1</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <tree string="Convidado de Eventos" duplicate="false">
+                <field name="nome" />
+                <field name="cargo" />
+                <field name="minibiografia" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="enap_evento_convidado_search" >
+        <field name="name">enap.evento.convidado.search</field>
+        <field name="model">enap.evento.convidado</field>
+        <field name="priority">1</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <search string="Convidado de Eventos">
+                <field name="nome" />
+            </search>
+        </field>
+    </record>
+     
+    <record id="enap_evento_convidado_kanban" model="ir.ui.view">
+        <field name="name">enap.evento.convidado.kanban</field>
+        <field name="model">enap.evento.convidado</field>
+        <field name="arch" type="xml">
+            <kanban> 
+                <field name="id" />
+                <field name="nome" />
+                <field name="cargo" />
+                <field name="minibiografia" />
+                <field name="image_1920" />
+                    <templates>
+                    <t t-name="kanban-box">                                                                    
+                        <div class="o_dropdown_kanban dropdown">
+                            <a class="dropdown-toggle btn"
+                                data-toggle="dropdown" role="button"
+                                aria-label="Dropdown menu"
+                                title="Dropdown menu"
+                                href="#">
+                                <span class="fa fa-ellipsis-v" />
+                            </a>
+                            <div class="dropdown-menu" role="menu">                                                                                                       
+                                <a role="menuitem" type="edit" class="dropdown-item">Editar</a>                                                                                                        
+                                <a role="menuitem" type="delete" class="dropdown-item">Excluir</a>                                                    
+                            </div>
+                            <div class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('enap.evento.convidado', 'image_1920', record.id.raw_value)" alt="Foto" class="o_image_128_contain"/>
+                                </div>
+                            </div>
+                            <div class="oe_kanban_details"> 
+                                <div name="cargo" class="mt-1">
+                                    <strong> 
+                                        Nome: <field name="nome"/>                                   
+                                    </strong>                                                                                                                               
+                                </div>   
+                                <div name="cargo" class="mt-1">
+                                    Cargo: <field name="cargo" />
+                                </div>   
+                            </div>   
+                            <div class="oe_kanban_footer"> 
+                                <div class="oe_kanban_footer_left">
+                                    <field name="url_perfil_profissional" widget="url" />                                                                    
+                                </div>   
+                            </div>   
+                        </div>                        
+                    </t>
+                </templates>
+            </kanban> 
+        </field>
+    </record>
+
+</odoo>

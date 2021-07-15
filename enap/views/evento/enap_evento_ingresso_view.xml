@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright © 2019–; Brasil; Taŭga Tecnologia; Todos os direitos reservados
+    Copyright © 2019–; Brazil; Taŭga Technology; All rights reserved
+
+-->
+<odoo>
+
+    <record model="ir.ui.view" id="enap_evento_ingresso_form" >
+        <field name="name">enap.evento.ingresso.form</field>
+        <field name="model">enap.evento.inscrito</field>
+        <field name="priority">1</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <form string="Ingressos do evento" duplicate="false">
+                <div class="o_form_statusbar">
+                    <div class="o_statusbar_buttons">
+<!--                         <button type="object" name="gera_arquivo" string="Gerar arquivo" class="btn-primary" /> -->
+                    </div>
+                </div>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    </div>
+                    <div name="titulo" class="oe_title">
+                        <field name="tipo" invisible="1" />
+                        <field name="partner_id" string="Nome:"/>
+                        <field name="cpf" string="CPF:"/>
+                        <field name="email" string="E-mail:"/>
+                        <field name="data_inscricao" string="Data da inscrição:"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="enap_evento_ingresso_tree" >
+        <field name="name">enap.evento.ingresso.tree</field>
+        <field name="model">enap.evento.inscrito</field>
+        <field name="priority">1</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <tree string="Ingresso de Eventos" duplicate="false">
+                <field name="tipo" invisible="1" />
+                <field name="partner_id" />
+                <field name="cpf" />
+                <field name="email" />
+                <field name="data_inscricao" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="enap_evento_ingresso_search" >
+        <field name="name">enap.evento.ingresso.search</field>
+        <field name="model">enap.evento.inscrito</field>
+        <field name="priority">1</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <search string="Ingresso de Eventos">
+                <field name="tipo" invisible="1" />
+                <field name="partner_id" />
+                <field name="cpf" />
+                <field name="email" />
+                <field name="data_inscricao" />
+            </search>
+        </field>
+    </record>
+
+    <record id="enap_evento_ingresso_kanban" model="ir.ui.view">
+        <field name="name">enap.evento.ingresso.kanban</field>
+        <field name="model">enap.evento.inscrito</field>
+        <field name="arch" type="xml">
+            <kanban> 
+                <field name="tipo" invisible="1" />
+                <field name="partner_id"/>
+                <field name="cpf" />
+                <field name="email" />
+                <field name="data_inscricao" />
+                    <templates>
+                    <t t-name="kanban-box">                                                                    
+                        <div class="o_dropdown_kanban dropdown">
+                            <a class="dropdown-toggle btn"
+                                data-toggle="dropdown" role="button"
+                                aria-label="Dropdown menu"
+                                title="Dropdown menu"
+                                href="#">
+                                <span class="fa fa-ellipsis-v" />
+                            </a>
+                            <div class="dropdown-menu" role="menu">                                                                                                       
+                                <a role="menuitem" type="edit" class="dropdown-item">Editar</a>                                                                                                        
+                                <a role="menuitem" type="delete" class="dropdown-item">Excluir</a>                                                    
+                            </div>
+                            <!-- <div class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('enap.evento.parceiro', 'image_1920', record.id.raw_value)" alt="Foto" class="o_image_128_contain"/>
+                                </div>
+                            </div> -->
+                            <div class="oe_kanban_details"> 
+                                <div name="nome" class="mt-1">
+                                    <strong> 
+                                        Nome: <field name="partner_id" />                                   
+                                    </strong>        
+                                        <field name="tipo" invisible="1" />
+                                        <field name="cpf" />
+                                        <field name="email" />
+                                        <field name="data_inscricao" />                                                                                                                      
+                                </div>    
+                            </div>   
+                        </div>                        
+                    </t>
+                </templates>
+            </kanban> 
+        </field>
+    </record>
+
+</odoo>

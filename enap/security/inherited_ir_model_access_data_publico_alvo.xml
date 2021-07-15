@@ -1,0 +1,66 @@
+<!--
+
+    Copyright © 2017; Brasil; Taŭga Tec\nologia; Todos os direitos reservados
+    Copyright © 2017; Brazil; Taŭga Tech\nology; All rights reserved
+
+-->
+<odoo noupdate="False">
+
+   <!--
+
+      E\nAP
+
+   -->
+
+    <record id="ACESSO_ENAP_PUBLICO_ALVO_GRUPO_ENAP_SUPORTE" model="ir.model.access">
+        <field name="name">ENAP – Eventos (suporte)</field>
+        <field name="model_id" ref="enap.model_enap_publico_alvo" />
+        <field name="group_id" ref="enap.GRUPO_ENAP_SUPORTE" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_unlink" eval="True" />
+    </record>
+
+    <record id="ACESSO_ENAP_PUBLICO_ALVO_GRUPO_ENAP_ADMINISTRADOR" model="ir.model.access">
+        <field name="name">ENAP – Eventos (administrador)</field>
+        <field name="model_id" ref="enap.model_enap_publico_alvo" />
+        <field name="group_id" ref="enap.GRUPO_ENAP_SUPORTE" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_write" eval="False" />
+        <field name="perm_unlink" eval="False" />
+    </record>
+
+    <record id="ACESSO_ENAP_PUBLICO_ALVO_GRUPO_ENAP_SECRETARIA" model="ir.model.access">
+        <field name="name">ENAP – Eventos (secretaria)</field>
+        <field name="model_id" ref="enap.model_enap_publico_alvo" />
+        <field name="group_id" ref="enap.GRUPO_ENAP_SECRETARIA" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_write" eval="False" />
+        <field name="perm_unlink" eval="False" />
+    </record>
+
+    <record id="ACESSO_ENAP_PUBLICO_ALVO_GRUPO_ENAP_EVENTO_COORDENADOR" model="ir.model.access">
+        <field name="name">ENAP – Eventos (coordenador)</field>
+        <field name="model_id" ref="enap.model_enap_publico_alvo" />
+        <field name="group_id" ref="enap.GRUPO_ENAP_EVENTO_COORDENADOR" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_write" eval="False" />
+        <field name="perm_unlink" eval="False" />
+    </record>
+
+    <record id="ACESSO_ENAP_PUBLICO_ALVO_GRUPO_ENAP_EVENTO_PARTICIPANTE" model="ir.model.access">
+        <field name="name">ENAP – Eventos (participante)</field>
+        <field name="model_id" ref="enap.model_enap_publico_alvo" />
+        <field name="group_id" ref="enap.GRUPO_ENAP_EVENTO_PARTICIPANTE" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_write" eval="False" />
+        <field name="perm_unlink" eval="False" />
+    </record>
+
+
+</odoo>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright © 2019–; Brasil; Taŭga Tecnologia; Todos os direitos reservados
+    Copyright © 2019–; Brazil; Taŭga Technology; All rights reserved
+
+-->
+<odoo>
+
+    <record model="ir.ui.view" id="enap_evento_form" >
+        <field name="name">enap.evento.form</field>
+        <field name="model">enap.evento</field>
+        <field name="priority">1</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <form string="Evento" duplicate="false">
+                <div class="o_form_statusbar">
+                    <div class="o_statusbar_buttons">
+<!--                         <button type="object" name="gera_arquivo" string="Gerar arquivo" class="btn-primary" /> -->
+                    </div>
+                </div>
+
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    </div>
+                    <notebook>
+                        <page name="evento" string="Evento">
+                            <group col="4" colspan="4">
+                                <group col="4" colspan="4">
+                                    <field name="titulo" string="*Nome do evento:" placeholder="Insira o nome do seu evento" required="1"/>
+                                    <field name="formato_id" string="*Formato:" placeholder="Selecione o formato do evento" options="{'no_create': true, 'no_open':true}" />
+                                    <html colspan="2" style="text-align: right; font-size: 0.8rem;">
+                                        200 caracteres
+                                    </html>
+                                    <html colspan="2">
+                                    </html>
+                                    <field name="descricao" string="*Descrição:" placeholder="Insira uma chamada curta para atrair o seu público" colspan="4"/>
+                                    <html colspan="4" style="text-align: right; font-size: 0.8rem;">
+                                        400 caracteres
+                                    </html>
+            <!--                    <field name="codigo" /> -->
+                                    <field name="eixo_tematico_ids" string="*Eixos temáticos:" placeholder="Selecione um ou mais temas" options="{'no_create': true, 'no_open':true}" widget="many2many_tags" required="1"/>
+                                    <field name="modalidade" string="*Modalidade:" placeholder="Selecione a modalidade" required="1"/>
+                                    <field name="visibilidade" string="*Visibilidade:" placeholder="Selecione a visibilidade da página do evento" required="1"/>
+                                    <field name="link_gravacao" string="Link da gravação:" placeholder="Caso o evento já tenha ocorrido, você pode publicar o link da gravação para quem ainda não assistiu" />
+                                    <field name="local" string="*Local:" placeholder="Informe onde o evento irá ocorrer: endereço presencial, zoom, youtube etc." required="1" colspan="4"/>
+                                </group>
+                                <group col="2" colspan="2" string="*Período de realização">
+                                    <field name="periodo_ids" colspan="2" nolabel="1" mode="tree" context="{'kanban_view_ref': 'enap.enap_evento_periodo_kanban', 'form_view_ref': 'enap.enap_evento_periodo_form'}"/>
+                                </group>
+                                <group col="2" colspan="2" string="*Público Alvo">
+                                    <field name="publico_alvo_ids" nolabel="1" colspan="2" placeholder="Selecione um ou mais perfis" options="{'no_create': true, 'no_open':true}" widget="many2many_tags" required="1"/>
+                                    <field name="publico_alvo_para_quem" placeholder="Descreva para quem é esse evento. Exemplo: para todos os que buscam adaptar a gestão ao universo digital..." />
+                                </group>
+                                <group col="4" colspan="4" >
+                                    <separator string="Sobre o evento:" colspan="2"/>
+                                    <html colspan="4">
+                                        Fale mais sobre o evento: quais os objetivos, progamação, etc.
+                                    </html>
+                                    <field colspan="4" name="sobre" nolabel="1"/>
+                                </group>
+                                <group col="4" colspan="4" string="Imagem do evento:">
+                                    <field name="image_1920" nolabel="1" widget="image" options="{'preview_image': 'image_256'}" colspan="1"/>
+                                <html colspan="3">
+                                    <p>
+                                    <i>A dimensão recomendada é de 1200 x 1200<br/>
+                                    (mesma proporção do formato utilizado no Instagram).<br/>
+                                    Formato JPEG ou PNG, de no máximo 2MB.<br/>
+                                    Imagens com proporções diferentes serão cortadas.</i>
+                                    </p>
+                                </html>
+                                </group>
+                                <group col="4" colspan="4" string="Convidados">
+                                    <field name="convidado_ids" nolabel="1" colspan="4" mode="kanban" context="{'kanban_view_ref': 'enap.enap_evento_convidado_kanban', 'form_view_ref': 'enap.enap_evento_convidado_form'}"/>
+                                </group>
+                                <group col="4" colspan="4" string="Organizador">
+                                </group>
+                                <group col="4" colspan="4" string="Parceiros">
+                                    <field name="parceiros_ids" nolabel="1" colspan="4" mode="kanban" context="{'kanban_view_ref': 'enap.enap_evento_parceiro_kanban', 'form_view_ref': 'enap.enap_evento_parceiro_form'}"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="inscritos" string="Convidados e inscritos">
+                            <group col="4" colspan="4">
+                                <group col="2" colspan="2" string="Ingressos">
+                                    <field name="ingresso_data_inicial" string="De" />
+                                    <field name="ingresso_data_final" string="Até" />
+                                    <field name="ingressos_confirmados" string="Confirmados" />
+                                    <field name="ingresso_limite_vagas" string="Vagas" />
+                                    <field name="ingresso_restricao" string="Restrições" />
+                                </group>
+                                <group col="2" colspan="2" string="Convites">
+                                    <field name="convite_data_inicial" string="De" />
+                                    <field name="convite_data_final" string="Até" />
+                                    <field name="convites_confirmados" string="Confirmados" />
+                                </group>
+                                <group col="2" colspan="2">
+                                    <!-- <field name="ingresso_ids" nolabel="1" context="{'default_tipo': 'ingresso'}"> -->
+                                    <field name="ingresso_ids" nolabel="1" colspan="2" mode="kanban" context="{'default_tipo': 'ingresso','kanban_view_ref': 'evento.enap_evento_ingresso_kanban', 'form_view_ref': 'evento.enap_evento_ingresso_form'}">
+                                        <!-- <tree editable="1">
+                                            <field name="tipo" invisible="1" />
+                                            <field name="partner_id" />
+                                            <field name="cpf" />
+                                            <field name="email" />
+                                            <field name="data_inscricao" />
+                                        </tree> -->
+                                    </field>
+                                </group>
+                                <group col="2" colspan="2">
+                                    <!-- <field name="convite_ids" nolabel="1" context="{'default_tipo': 'convite'}"> -->
+                                    <field name="convite_ids" nolabel="1" colspan="2" mode="kanban" context="{'default_tipo': 'convite','kanban_view_ref': 'evento.enap_evento_convite_kanban', 'form_view_ref': 'evento.enap_evento_convite_form'}">
+                                        <!-- <tree editable="1">
+                                            <field name="tipo" invisible="1" />
+                                            <field name="partner_id" />
+                                            <field name="cpf" />
+                                            <field name="email" />
+                                            <field name="data_inscricao" />
+                                        </tree> -->
+                                    </field>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+<!--                 <div class="oe_chatter"> -->
+    <!--                 <field name="message_follower_ids" widget="mail_followers" /> -->
+    <!--                 <field name="activity_ids" widget="mail_activity" /> -->
+<!--                     <field name="message_ids" widget="mail_thread"/> -->
+<!--                 </div> -->
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="enap_evento_tree" >
+        <field name="name">enap.evento.tree</field>
+        <field name="model">enap.evento</field>
+        <field name="priority">1</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <tree string="Eventos" duplicate="false">
+                <field name="titulo" />
+                <field name="modalidade" />
+                <field name="data_inicial" string="Início"/>
+                <field name="data_final" string="Fim"/>
+                <field name="formato_id" />
+                <field name="progress" widget="progressbar" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="enap_evento_search" >
+        <field name="name">enap.evento.search</field>
+        <field name="model">enap.evento</field>
+        <field name="priority">1</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <search string="Eventos">
+                <field name="titulo" />
+                <field name="modalidade" />
+                <field name="formato_id" />
+
+                <filter name="grupo_formato" string="Formato" context="{'group_by': 'formato_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="enap_evento_action">
+        <field name="name">Eventos</field>
+        <field name="res_model">enap.evento</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="enap_evento_search" />
+    </record>
+
+    <record model="ir.actions.act_window.view" id="enap_evento_tree_action">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="enap_evento_tree"/>
+        <field name="act_window_id" ref="enap_evento_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="enap_evento_form_action">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="enap_evento_form"/>
+        <field name="act_window_id" ref="enap_evento_action"/>
+    </record>
+
+    <menuitem
+        id="menu_enap_evento_evento"
+        sequence="2"
+        name="Eventos"
+        parent="menu_enap_evento"
+        action="enap_evento_action"
+    />
+
+</odoo>

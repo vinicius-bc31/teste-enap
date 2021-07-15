@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    Copyright © 2017; Brasil; Taŭga Tecnologia; Todos os direitos reservados
+    Copyright © 2017; Brazil; Taŭga Technology; All rights reserved
+
+-->
+<odoo noupdate="False">
+
+    <record id="GRUPO_ENAP_SUPORTE" model="res.groups">
+        <field name="name">ENAP - Suporte técnico</field>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        <field name="implied_ids" eval="[
+               [4, ref('base.group_system')],
+               [4, ref('base.group_erp_manager')],
+               [4, ref('base.group_allow_export')],
+           ]"/>
+    </record>
+
+    <record id="GRUPO_ENAP_ADMINISTRADOR" model="res.groups">
+        <field name="name">ENAP - Administrador</field>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+
+    <record id="GRUPO_ENAP_SECRETARIA" model="res.groups">
+        <field name="name">ENAP - Secretaria</field>
+    </record>
+
+    <record id="GRUPO_ENAP_EVENTO_COORDENADOR" model="res.groups">
+        <field name="name">ENAP - Coordenador de Eventos</field>
+    </record>
+
+    <record id="GRUPO_ENAP_EVENTO_PARTICIPANTE" model="res.groups">
+        <field name="name">ENAP - Participante de Eventos</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright © 2019–; Brasil; Taŭga Tecnologia; Todos os direitos reservados
+    Copyright © 2019–; Brazil; Taŭga Technology; All rights reserved
+
+-->
+<odoo>
+
+    <record model="ir.ui.view" id="enap_evento_periodo_form" >
+        <field name="name">enap.evento.periodo.form</field>
+        <field name="model">enap.evento.periodo</field>
+        <field name="priority">1</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <form string="ENAP - Eventos (periodo)" duplicate="false">
+                <div class="o_form_statusbar">
+                    <div class="o_statusbar_buttons">
+                    </div>
+                </div>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <field name="descricao" invisible="0" />
+                    </div>
+                    <group col="6" colspan="4">
+                        <group col="2" colspan="2">
+                            <field name="data" string="Data:" required="1" />
+                        </group>
+                        <group col="2" colspan="2">
+                            <field name="hora_inicial" string="Hora inicial:" widget="float_time" required="1"/>
+                        </group>
+                        <group col="2" colspan="2">
+                            <field name="hora_final" string="Hora final:" widget="float_time" required="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="enap_evento_periodo_tree" >
+        <field name="name">enap.evento.periodo.tree</field>
+        <field name="model">enap.evento.periodo</field>
+        <field name="priority">1</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <tree string="ENAP - Eventos (periodo)" duplicate="false">
+                <field name="data" />
+                <field name="hora_inicial" widget="float_time" string="Início" />
+                <field name="hora_final" widget="float_time" string="Fim" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="enap_evento_periodo_search" >
+        <field name="name">enap.evento.periodo.search</field>
+        <field name="model">enap.evento.periodo</field>
+        <field name="priority">1</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <search string="ENAP - Eventos (periodo)">
+                <field name="data" />
+                <field name="hora_inicial" />
+                <field name="hora_final" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="enap_evento_periodo_calendar">
+        <field name="name">enap.evento.periodo.calendar</field>
+        <field name="model">enap.evento.periodo</field>
+        <field name="arch" type="xml">
+            <calendar string="ENAP - Eventos (periodo)" date_start="data_hora_inicial" date_stop="data_hora_final" color="evento_id" quick_add="false">
+                <field name="evento_id" filters="1"/>
+                <field name="modalidade" />
+                <field name="formato_id" />
+                <field name="data_hora_inicial" />
+                <field name="data_hora_final" />
+            </calendar>
+        </field>
+    </record>
+
+    <record id="enap_evento_periodo_kanban" model="ir.ui.view">
+        <field name="name">enap.evento.periodo.kanban</field>
+        <field name="model">enap.evento.periodo</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="data" />
+                <field name="hora_inicial" />
+                <field name="hora_final" />
+                    <templates>
+                    <t t-name="kanban-box">
+                        <div class="o_dropdown_kanban dropdown">
+                            <a class="dropdown-toggle btn"
+                                data-toggle="dropdown" role="button"
+                                aria-label="Dropdown menu"
+                                title="Dropdown menu"
+                                href="#">
+                                <span class="fa fa-ellipsis-v" />
+                            </a>
+                            <div class="dropdown-menu" role="menu">
+                                <a role="menuitem" type="edit" class="dropdown-item">Editar</a>
+                                <a role="menuitem" type="delete" class="dropdown-item">Excluir</a>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <div class="oe_kanban_bottom_left">
+                                    <field name="data"/>,&amp;nbsp;
+                                    <field name="hora_inicial" widget="float_time" />&amp;nbsp;→&amp;nbsp;
+                                    <field name="hora_final" widget="float_time" />
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="enap_evento_periodo_action">
+        <field name="name">Períodos</field>
+        <field name="res_model">enap.evento.periodo</field>
+        <field name="view_mode">calendar,tree,form</field>
+        <field name="search_view_id" ref="enap_evento_periodo_search" />
+    </record>
+
+    <record model="ir.actions.act_window.view" id="enap_evento_periodo_calendar_action">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">calendar</field>
+        <field name="view_id" ref="enap_evento_periodo_calendar"/>
+        <field name="act_window_id" ref="enap_evento_periodo_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="enap_evento_periodo_tree_action">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="enap_evento_periodo_tree"/>
+        <field name="act_window_id" ref="enap_evento_periodo_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="enap_evento_periodo_form_action">
+        <field eval="3" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="enap_evento_periodo_form"/>
+        <field name="act_window_id" ref="enap_evento_periodo_action"/>
+    </record>
+
+    <menuitem
+        id="menu_enap_evento_periodo"
+        sequence="1"
+        name="Calendário"
+        parent="menu_enap_evento"
+        action="enap_evento_periodo_action"
+    />
+
+</odoo>
